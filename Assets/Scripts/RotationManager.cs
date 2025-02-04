@@ -12,37 +12,47 @@ public class RotationManager : MonoBehaviour
     public enum RotationState
     {
         NotActive,
-        Rotating
+        Rotating,
+        Tilting
     }
 
     // -------- VARIABLES --------
 
     [Header("Values")]
 
-    [SerializeField]
-    private float _rotationSpeed;
+    // hier hou ik bij in welke modus de code zit
+    private RotationState _rotationState;
+
 
     [SerializeField]
-    private float _slerpSpeed;
+    private float _rotationSpeed; // gevoeligheid/sensitiviteit van rotatie
+
+    [SerializeField]
+    private float _slerpSpeed; // snelheid lerp rotatie
 
     [SerializeField]
     private float _tiltSpeed;
 
+    // waardes direction van bewegende muis 
     private float _horizontalMouseSpeed;
     private float _verticalMouseSpeed;
 
+    // hier tel ik waardes van direction muis op zodat het een rotatie kan worden
     private float _xRotation;
     private float _yRotation;
 
+    // afstand camera van prefab (MOET NOG AANGEZETEN WORDEN VOOR TILTEN)
     private float _currentDistanceFromTarget = 5;
 
+    // hier sla ik de nieuwe rotatie waarde op
     private Quaternion _currentCameraRotation;
 
     [Header("Objects")]
 
     public Camera CameraToRotate;
-    public Transform TransformToLookAt; // position waar de camera altijd naar kijkt
+    public Transform TransformToLookAt; // position waar de camera altijd naar kijkt (kan niet de camera zelf zijn door tilten)
     public GameObject Prefab;
+
 
 
     void Start()
@@ -53,36 +63,83 @@ public class RotationManager : MonoBehaviour
         _currentCameraRotation = CameraToRotate.transform.rotation;
     }
 
+
     void Update()
     {
-        // code is alleen actief als de linker muis knop is ingedrukt en er een positie is om naar te kijken
-        if(Input.GetMouseButton(0) && TransformToLookAt != null)
+        switch(_rotationState)
         {
-            print("working");
-            CalculateMouseSpeed(); // calculeer muis snelheid
+            case RotationState.NotActive:
 
-            _xRotation += _horizontalMouseSpeed;
-            _yRotation -= _verticalMouseSpeed;
+                print("not active");
+                // kijk of user wil rotaten (als de linker muis knop is ingedrukt en er een positie is om naar te kijken)
+                if (Input.GetMouseButtonDown(0) && TransformToLookAt != null)
+                    _rotationState = RotationState.Rotating;
 
-            // bereken hier de rotatie waar de user heen wil met muis
-            Quaternion targetRot = Quaternion.Euler(_xRotation, _yRotation, 0);
+                // kijk of de user wil tilten (als de rechter muis knop is ingedrukt)
+                else if (Input.GetMouseButtonDown(1))
+                    _rotationState = RotationState.Tilting;
 
-            // de formule voor het berekenen van een smooth lerp naar nieuwe rotatie
-            _currentCameraRotation = Quaternion.Slerp(_currentCameraRotation, targetRot, Time.deltaTime * _slerpSpeed);
+                break;
 
-            // zet afstand van object in Vector3 formaat
-            Vector3 direction = new Vector3(0, 0, -_currentDistanceFromTarget);
-            
 
-            RotateCamera(direction); // roteer camera
+            case RotationState.Rotating:
+
+                print("rotating");
+                CalculateMouseSpeed(_rotationSpeed); // calculeer muis snelheid
+
+                // sla nieuwe rotatie waardes op gebaseerd op muis bewegingen
+                _xRotation += _horizontalMouseSpeed;
+                _yRotation -= _verticalMouseSpeed;
+
+                // bereken hier de rotatie waar de user heen wilt met muis
+                Quaternion targetRot = Quaternion.Euler(_yRotation, _xRotation, 0);
+
+                // de formule voor het berekenen van een smooth lerp naar nieuwe rotatie
+                _currentCameraRotation = Quaternion.Slerp(_currentCameraRotation, targetRot, Time.deltaTime * _slerpSpeed);
+
+                // zet afstand van object in Vector3 formaat
+                Vector3 direction = new Vector3(0, 0, -_currentDistanceFromTarget);
+
+
+                RotateCamera(direction); // roteer camera
+
+
+
+                // als button wordt losgelaten, ga naar niet active
+                if (Input.GetMouseButtonUp(0))
+                    _rotationState = RotationState.NotActive;
+
+                break;
+
+
+            case RotationState.Tilting:
+
+                print("tilting");
+                CalculateMouseSpeed(_tiltSpeed); // calculeer muis snelheid
+
+                // de nieuwe positie offset gebaseerd op muis input
+                Vector3 newPosition = new Vector3(_horizontalMouseSpeed, _verticalMouseSpeed, 0);
+
+                // bereken de nieuwe LOCALE positie offset gebaseerd op de huidige rotatie van de camera
+                Vector3 newLocalPosition = CameraToRotate.transform.rotation * newPosition;
+
+                // voeg muis input toe aan huidige positie
+                CameraToRotate.transform.localPosition += newLocalPosition;
+
+                // als button wordt losgelaten, ga naar niet active
+                if (Input.GetMouseButtonUp(1))
+                    _rotationState = RotationState.NotActive;
+
+                break;
         }
+        
     }
 
     // functie om de camera te roteren
     void RotateCamera(Vector3 direction)
     {
-        CameraToRotate.transform.position = TransformToLookAt.position + _currentCameraRotation * direction;
-        CameraToRotate.transform.LookAt(TransformToLookAt.position); // camera kijkt nogsteeds naar rotatie punt
+        CameraToRotate.transform.position = TransformToLookAt.position + _currentCameraRotation * direction; // bereken rotatie
+        CameraToRotate.transform.LookAt(TransformToLookAt.position); // camera kijkt nogsteeds naar midden punt
     }
 
     // functie om de camera te tilten
@@ -92,10 +149,10 @@ public class RotationManager : MonoBehaviour
     }
 
     // calculeer hier de snelheid van de muis van de user
-    void CalculateMouseSpeed()
+    void CalculateMouseSpeed(float moveSpeed)
     {
-        // bereken muis snelheid
-        _horizontalMouseSpeed = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
-        _verticalMouseSpeed = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
+        // bereken muis snelheden
+        _horizontalMouseSpeed = Input.GetAxis("Mouse X") * moveSpeed * Time.deltaTime;
+        _verticalMouseSpeed = Input.GetAxis("Mouse Y") * moveSpeed * Time.deltaTime;
     }
 }

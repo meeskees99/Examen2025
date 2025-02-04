@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationSpeed: 100
   _slerpSpeed: 20
-  _tiltSpeed: 100
+  _tiltSpeed: 1
   CameraToRotate: {fileID: 906025123}
   TransformToLookAt: {fileID: 462471209}
   Prefab: {fileID: 2142959365}
