@@ -203,7 +203,7 @@ MonoBehaviour:
   _rotationSpeed: 100
   _slerpSpeed: 20
   _tiltSpeed: 5
-  _yRotation: 0
+  ZoomManager: {fileID: 700835382}
   CameraToRotate: {fileID: 906025123}
   TransformToLookAt: {fileID: 462471209}
   Prefab: {fileID: 2142959365}
@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cae2ad10aa8ac4197f38b641d289e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _zoomSpeed: 0
+  CameraToRotate: {fileID: 0}
 --- !u!1 &906025119
 GameObject:
   m_ObjectHideFlags: 0
