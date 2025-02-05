@@ -124,7 +124,10 @@ public class RotationManager : MonoBehaviour
                 Vector3 newLocalPosition = CameraToRotate.transform.rotation * newPosition;
 
                 // voeg muis input toe aan huidige positie
-                CameraToRotate.transform.localPosition += newLocalPosition;
+                CameraToRotate.transform.position += newLocalPosition;
+
+                // beweeg transform mee waar camera naar kijkt zodat het draaipunt meebeweegt
+                TransformToLookAt.transform.position += newLocalPosition;
 
                 // als button wordt losgelaten, ga naar niet active
                 if (Input.GetMouseButtonUp(1))
