@@ -54,7 +54,7 @@ public class RotationManager : MonoBehaviour
     public GameObject Prefab;
 
 
-
+    // ik zet hier de begin waardes goed
     void Start()
     {
         _yRotation = CameraToRotate.transform.eulerAngles.y;
@@ -123,11 +123,7 @@ public class RotationManager : MonoBehaviour
                 // bereken de nieuwe LOCALE positie offset gebaseerd op de huidige rotatie van de camera
                 Vector3 newLocalPosition = CameraToRotate.transform.rotation * newPosition;
 
-                // voeg muis input toe aan huidige positie
-                CameraToRotate.transform.position += newLocalPosition;
-
-                // beweeg transform mee waar camera naar kijkt zodat het draaipunt meebeweegt
-                TransformToLookAt.transform.position += newLocalPosition;
+                TiltCamera(newLocalPosition);
 
                 // als button wordt losgelaten, ga naar niet active
                 if (Input.GetMouseButtonUp(1))
@@ -146,9 +142,13 @@ public class RotationManager : MonoBehaviour
     }
 
     // functie om de camera te tilten
-    void TiltCamera()
+    void TiltCamera(Vector3 newLocalPosition)
     {
+        // voeg muis input toe aan huidige positie
+        CameraToRotate.transform.position += newLocalPosition;
 
+        // beweeg transform mee waar camera naar kijkt zodat het draaipunt meebeweegt
+        TransformToLookAt.transform.position += newLocalPosition;
     }
 
     // calculeer hier de snelheid van de muis van de user
