@@ -41,15 +41,15 @@ public class RotationManager : MonoBehaviour
     private float _xRotation;
     private float _yRotation;
 
-    // afstand camera van prefab (MOET NOG AANGEZETEN WORDEN VOOR ZOOMING)
-    private float _currentDistanceFromTarget = 5;
+    // afstand camera van prefab (WORDT BESTUURD DOOR ZOOM MANAGER)
+    [HideInInspector]
+    public float _currentDistanceFromTarget;
 
     // hier sla ik de nieuwe rotatie waarde op
     private Quaternion _currentCameraRotation;
 
     [Header("Objects")]
 
-    public ZoomManager ZoomManager; // pas rotatie aan gebaseerd op afstand product in zoom manager
     public Camera CameraToRotate;
     public Transform TransformToLookAt; // position waar de camera altijd naar kijkt (kan niet de camera zelf zijn door tilten)
     public GameObject Prefab;
@@ -63,8 +63,6 @@ public class RotationManager : MonoBehaviour
         _xRotation = CameraToRotate.transform.eulerAngles.x;
 
         _currentCameraRotation = CameraToRotate.transform.rotation;
-
-        ZoomManager.CameraToRotate = CameraToRotate;
     }
 
 
