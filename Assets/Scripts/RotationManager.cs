@@ -31,7 +31,7 @@ public class RotationManager : MonoBehaviour
     private float _slerpSpeed; // snelheid lerp rotatie
 
     [SerializeField]
-    private float _tiltSpeed;
+    private float _tiltSpeed; // gevoeligheid/sensitiviteit van tilten
 
     // waardes direction van bewegende muis 
     private float _horizontalMouseSpeed;
@@ -41,7 +41,7 @@ public class RotationManager : MonoBehaviour
     private float _xRotation;
     private float _yRotation;
 
-    // afstand camera van prefab (MOET NOG AANGEZETEN WORDEN VOOR TILTEN)
+    // afstand camera van prefab (MOET NOG AANGEZETEN WORDEN VOOR ZOOMING)
     private float _currentDistanceFromTarget = 5;
 
     // hier sla ik de nieuwe rotatie waarde op
@@ -91,6 +91,9 @@ public class RotationManager : MonoBehaviour
                 _xRotation += _horizontalMouseSpeed;
                 _yRotation -= _verticalMouseSpeed;
 
+                // limiteer y rotatie om clipping te voorkomen
+                _yRotation = Mathf.Clamp(_yRotation, -89, 89); 
+
                 // bereken hier de rotatie waar de user heen wilt met muis
                 Quaternion targetRot = Quaternion.Euler(_yRotation, _xRotation, 0);
 
@@ -115,7 +118,7 @@ public class RotationManager : MonoBehaviour
             case RotationState.Tilting:
 
                 print("tilting");
-                CalculateMouseSpeed(_tiltSpeed); // calculeer muis snelheid
+                CalculateMouseSpeed(-_tiltSpeed); // calculeer muis snelheid
 
                 // de nieuwe positie offset gebaseerd op muis input
                 Vector3 newPosition = new Vector3(_horizontalMouseSpeed, _verticalMouseSpeed, 0);
