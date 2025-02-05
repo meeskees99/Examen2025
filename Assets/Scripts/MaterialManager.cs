@@ -5,40 +5,46 @@ using UnityEngine;
 
 public class MaterialManager : MonoBehaviour
 {
-    public Material originalMaterial, edgeViewMaterial;
-    public bool edgeViewActivate;
-    public GameObject[] currentObjects;
-    public GameObject currentActiveObject;
-    public Material[] materials;
-    public MeshRenderer activeMesh;
+    public Material originalMaterial;
+    public Material edgeViewMaterial;
+    public Material clayViewMaterial;
+    public bool edgeViewButtonTemporary;
+    public bool clayViewButtonTemporary;
+    public GameObject currentObject;
+    public Material[] materialsArray;
+    public MeshRenderer currentMesh;
 
     public void Start()
     {
-        edgeViewActivate = false;
-        currentObjects = GameObject.FindGameObjectsWithTag("Model");
+        edgeViewButtonTemporary = false;
+        clayViewButtonTemporary = false;
     }
     public void Update()
     {
-        if (edgeViewActivate)
+        //This part controls wether or not the edge view shader is active or not.
+        if (edgeViewButtonTemporary)
         {
-            EdgeViewActivator();
-            edgeViewActivate = false;
+            currentObject = GameObject.FindGameObjectWithTag("Model");
+            currentMesh = currentObject.GetComponent<MeshRenderer>();
+            originalMaterial = currentMesh.material;
+            Material[] materials = new Material[currentMesh.sharedMaterials.Length];
+            materials[0] = originalMaterial;
+            materials[1] = edgeViewMaterial;
+            materialsArray = materials;
+            currentObject.GetComponent<MeshRenderer>().sharedMaterials = materials;
         }
-    }
-    void EdgeViewActivator()
-    {
-        for (int i = 0; i < currentObjects.Length; i++)
+        else if (!edgeViewButtonTemporary && materialsArray[1] == edgeViewMaterial)
         {
-            if (currentObjects[i].activeInHierarchy)
-            {
-                currentActiveObject = currentObjects[i];
-                activeMesh = currentActiveObject.GetComponent<MeshRenderer>();
-                originalMaterial = activeMesh.material;
-                Material[] materials = new Material[activeMesh.sharedMaterials.Length];
-                materials[0] = originalMaterial;
-                materials[1] = edgeViewMaterial;
-                currentActiveObject.GetComponent<MeshRenderer>().sharedMaterials = materials;
-            }
+            currentObject = GameObject.FindGameObjectWithTag("Model");
+            currentMesh = currentObject.GetComponent<MeshRenderer>();
+            originalMaterial = currentMesh.material;
+            Material[] materials = new Material[currentMesh.sharedMaterials.Length];
+            materials[0] = originalMaterial;
+            materials[1] = originalMaterial;
+            materialsArray = materials;
+            currentObject.GetComponent<MeshRenderer>().sharedMaterials = materials;
         }
+
+        //This part controls wether or not the clay view shader is active or not.
     }
 }

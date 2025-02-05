@@ -377,12 +377,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096f4690365af9d4da70dd05c6109c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 0}
   edgeViewMaterial: {fileID: 2100000, guid: 6232696c431beda488c981592cd24cb5, type: 2}
-  edgeViewActivate: 0
-  currentObjects: []
-  currentActiveObject: {fileID: 0}
-  materials: []
-  skinnedMesh: {fileID: 0}
+  clayViewMaterial: {fileID: 0}
+  edgeViewButtonTemporary: 0
+  currentObject: {fileID: 0}
+  materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentMesh: {fileID: 0}
 --- !u!4 &966487993
 Transform:
   m_ObjectHideFlags: 0
