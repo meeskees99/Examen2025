@@ -8,9 +8,12 @@ public class CanvasManager : MonoBehaviour
 {
 
     public GameObject[] GameObjectToShow;
-    public Canvas CanvasToHide;
-    public Canvas CanvasToShow;
-    public Material Skybox;
+    public Canvas AssetList;
+    public Canvas ModelView;
+    public Material ModelListSkybox;
+    public Material ModelViewSkybox;
+    private int currentModelNumber;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +28,19 @@ public class CanvasManager : MonoBehaviour
     }
     public void ButtonClick(int objectNumber)
     {
-        if (CanvasToHide != null) CanvasToHide.gameObject.SetActive(false);
-        if (CanvasToShow != null) CanvasToShow.gameObject.SetActive(true);
+        currentModelNumber = objectNumber;
+        if (AssetList != null) AssetList.gameObject.SetActive(false);
+        if (ModelView != null) ModelView.gameObject.SetActive(true);
         GameObjectToShow[objectNumber].SetActive(true);
-        RenderSettings.skybox = Skybox;
+        RenderSettings.skybox = ModelViewSkybox;
+         
+    }
+        public void Back()
+    {
+        if (AssetList != null) AssetList.gameObject.SetActive(true);
+        if (ModelView != null) ModelView.gameObject.SetActive(false);
+        GameObjectToShow[currentModelNumber].SetActive(false);
+        RenderSettings.skybox = ModelListSkybox;
 
     }
 }
