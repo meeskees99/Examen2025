@@ -163,4 +163,11 @@ public class RotationManager : MonoBehaviour
         _horizontalMouseSpeed = Input.GetAxis("Mouse X") * moveSpeed * Time.deltaTime;
         _verticalMouseSpeed = Input.GetAxis("Mouse Y") * moveSpeed * Time.deltaTime;
     }
+
+    // reset values from ResetCamera script
+    public void ResetValues()
+    {
+        _xRotation = 0;
+        _yRotation = 0;
+    }
 }

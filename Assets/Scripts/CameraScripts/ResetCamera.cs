@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class ResetCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public RotationManager RotationManager;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // reset camera
+        if(Input.GetMouseButtonDown(2))
+        {
+            // reset camera position/rotation
+            RotationManager.CameraToRotate.transform.position = new Vector3(0, 0, -5);
+            RotationManager.CameraToRotate.transform.rotation = new Quaternion();
+
+            RotationManager.TransformToLookAt.transform.position = new Vector3(0, 0, 0);
+            RotationManager.TransformToLookAt.transform.rotation = new Quaternion();
+
+            // reset values
+            RotationManager.ResetValues();
+        }
     }
 }
