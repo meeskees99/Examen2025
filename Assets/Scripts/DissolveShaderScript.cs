@@ -23,6 +23,9 @@ public class DissolveShaderScript : MonoBehaviour
     {
         if (done == false)
         {
+
+            //de animatie over time
+
             dissolveslider = Mathf.Clamp(dissolveslider, -1f, 1f);
 
             if (on == true && dissolveMaterial.GetFloat("_Time_Control") < 1f)
@@ -36,20 +39,36 @@ public class DissolveShaderScript : MonoBehaviour
 
             dissolveMaterial.SetFloat("_Time_Control", dissolveslider);
         }
-        if(on == true && dissolveslider > 0.95f || on == false && dissolveslider < -0.95f)     //
+
+        //checkt of de animatie in moet faden en of hij het eindpunt heeft bereikt.
+
+        if (on == true && dissolveslider > 0.95f)
         {
             done = true;
+            on = false;
         }
-        
+
+        //checkt of de animatie uit moet faden en of hij het eindpunt heeft bereikt.
+
+        if (on == false && dissolveslider < -0.95f)
+        {
+            done = true;
+            on = true;
+        }
+
     }
+
+    //de functies die aangeroepen kunnen worden door andere UI buttons.
     public void DissolveOn()
     {
         dissolveslider = -1f;
         on = true;
+        done = false;
     }
     public void DissolveOff()
     {
         dissolveslider = 1f;
         on = false;
+        done = false;
     }
 }
