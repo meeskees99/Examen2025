@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 310126366}
   - component: {fileID: 310126365}
   - component: {fileID: 310126364}
+  - component: {fileID: 310126368}
   - component: {fileID: 310126367}
   m_Layer: 0
   m_Name: Main Camera
@@ -259,6 +260,18 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &310126368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310126363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc2628ba20f8a1418c2b8af5d084a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &973339926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,6 +363,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1695250818}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d428ac4af47ac0c4d827364675478f19,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1695250819}
   m_SourcePrefab: {fileID: 100100000, guid: d428ac4af47ac0c4d827364675478f19, type: 3}
 --- !u!1 &1415120343
 GameObject:
@@ -491,13 +508,29 @@ MonoBehaviour:
   dissolveMaterial: {fileID: 2100000, guid: 290635df694f84b49989b6165bc618d2, type: 2}
   materialLit: {fileID: 2100000, guid: d3e4a7a94c7cfb143adb85e67b8344c0, type: 2}
   materialUnlit: {fileID: 2100000, guid: 89e4d28083627f440b9026dd0ea42905, type: 2}
-  edgeViewMaterial: {fileID: 2100000, guid: 6232696c431beda488c981592cd24cb5, type: 2}
-  clayViewMaterial: {fileID: 2100000, guid: d35a8bdeadf26af42ad4f55cd967a316, type: 2}
+  edgeViewMaterial: {fileID: 2100000, guid: e40645f0b63654e4295720585c2e5766, type: 2}
+  clayViewMaterial: {fileID: 2100000, guid: 4081b3c66c0d4d54196b775205af2d3a, type: 2}
   dissolveActivate: 0
   unlitViewActivate: 0
   litViewActivate: 0
   edgeViewActivate: 0
   clayViewActivate: 0
+--- !u!114 &1695250819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695250814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fded8af6d13e16741949c003bd864a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveMaterial: {fileID: 2100000, guid: 290635df694f84b49989b6165bc618d2, type: 2}
+  dissolveslider: 1
+  speed: 0.05
+  on: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MaterialChanger : MonoBehaviour
 {
-    private Material[] materialsArray;
-    private Material changerMaterialZero;
-    private Material changerMaterialOne;
-
-    [Header("ButtonClick Activator")]
-    public bool buttonClickMaterial;
+    [Header("Activators")]
+    public bool dissolveActivate;
+    public bool unlitViewActivate;
+    public bool litViewActivate;
+    public bool edgeViewActivate;
+    public bool clayViewActivate;
 
     [Header("Materials")]
     [SerializeField] private Material dissolveMaterial;
@@ -18,63 +18,57 @@ public class MaterialChanger : MonoBehaviour
     [SerializeField] private Material edgeViewMaterial;
     [SerializeField] private Material clayViewMaterial;
 
-    [Header("Activators")]
-    public bool dissolveActivate;
-    public bool unlitViewActivate;
-    public bool litViewActivate;
-    public bool edgeViewActivate;
-    public bool clayViewActivate;
+    private Material changerMaterialZero;
+    private Material changerMaterialOne;
 
     // Update is called once per frame
     void Update()
     {
         // first 5 if statements are to be deleted when replaced with buttons!
 
-        if (buttonClickMaterial && dissolveActivate)
+        if (dissolveActivate)
         {
             DissolveActivate();
+            ButtonClick();
             dissolveActivate = false;
         }
 
-        if (buttonClickMaterial && litViewActivate)
+        if (litViewActivate)
         {
             LitViewActivate();
+            ButtonClick();
             litViewActivate = false;
         }
 
-        if (buttonClickMaterial && unlitViewActivate)
+        if (unlitViewActivate)
         {
             UnlitViewActivate();
+            ButtonClick();
             unlitViewActivate = false;
         }
 
-        if (buttonClickMaterial && edgeViewActivate)
+        if (edgeViewActivate)
         {
             EdgeViewActivate();
+            ButtonClick();
             edgeViewActivate = false;
         }
 
-        if (buttonClickMaterial && clayViewActivate)
+        if (clayViewActivate)
         {
             ClayViewActivate();
+            ButtonClick();
             clayViewActivate = false;
-        }
-
-        //This function applies the materials assigned in all seperate material functions.
-        if (buttonClickMaterial)
-        {
-            Material[] materials = new Material[GetComponent<Renderer>().sharedMaterials.Length];
-            materials[0] = changerMaterialZero;
-            materials[1] = changerMaterialOne;
-            GetComponent<MeshRenderer>().sharedMaterials = materials;
-            buttonClickMaterial = false;
         }
     }
 
-    //This function solesly exists for the button to set to true, this can only be set to true after any material activate boolean has been set to true!
+    //This function applies the materials assigned in all seperate material functions.
     public void ButtonClick()
     {
-        buttonClickMaterial = true;
+        Material[] materials = new Material[GetComponent<Renderer>().sharedMaterials.Length];
+        materials[0] = changerMaterialZero;
+        materials[1] = changerMaterialOne;
+        GetComponent<MeshRenderer>().sharedMaterials = materials;
     }
     //Following functions activate view modes by setting the "materials to change" before setting buttonclick to true. 
     //("Materials to change" refers to the materials called changerMaterialZero and changerMaterialOne)
