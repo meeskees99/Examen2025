@@ -487,11 +487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4ffbff476ba4e42a64fc3ff8a235a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonClickMaterial: 0
+  dissolveMaterial: {fileID: 2100000, guid: 290635df694f84b49989b6165bc618d2, type: 2}
   materialLit: {fileID: 2100000, guid: d3e4a7a94c7cfb143adb85e67b8344c0, type: 2}
   materialUnlit: {fileID: 2100000, guid: 89e4d28083627f440b9026dd0ea42905, type: 2}
   edgeViewMaterial: {fileID: 2100000, guid: 6232696c431beda488c981592cd24cb5, type: 2}
   clayViewMaterial: {fileID: 2100000, guid: d35a8bdeadf26af42ad4f55cd967a316, type: 2}
-  buttonClickMaterial: 0
+  dissolveActivate: 0
   unlitViewActivate: 0
   litViewActivate: 0
   edgeViewActivate: 0

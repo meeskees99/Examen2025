@@ -12,12 +12,14 @@ public class MaterialChanger : MonoBehaviour
     public bool buttonClickMaterial;
 
     [Header("Materials")]
+    [SerializeField] private Material dissolveMaterial;
     [SerializeField] private Material materialLit;
     [SerializeField] private Material materialUnlit;
     [SerializeField] private Material edgeViewMaterial;
     [SerializeField] private Material clayViewMaterial;
 
     [Header("Activators")]
+    public bool dissolveActivate;
     public bool unlitViewActivate;
     public bool litViewActivate;
     public bool edgeViewActivate;
@@ -26,7 +28,13 @@ public class MaterialChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // first 4 if statements are to be deleted when replaced with buttons!
+        // first 5 if statements are to be deleted when replaced with buttons!
+
+        if (buttonClickMaterial && dissolveActivate)
+        {
+            DissolveActivate();
+            dissolveActivate = false;
+        }
 
         if (buttonClickMaterial && litViewActivate)
         {
@@ -70,6 +78,13 @@ public class MaterialChanger : MonoBehaviour
     }
     //Following functions activate view modes by setting the "materials to change" before setting buttonclick to true. 
     //("Materials to change" refers to the materials called changerMaterialZero and changerMaterialOne)
+
+    //Activates the dissolve effect.
+    public void DissolveActivate()
+    {
+        changerMaterialZero = dissolveMaterial;
+        changerMaterialOne = dissolveMaterial;
+    }
 
     //Activates lit view.
     public void LitViewActivate()
