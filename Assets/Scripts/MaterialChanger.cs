@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MaterialChanger : MonoBehaviour
 {
-    [Header("Activators")]
-    public bool dissolveActivate;
-    public bool unlitViewActivate;
-    public bool litViewActivate;
-    public bool edgeViewActivate;
-    public bool clayViewActivate;
-
+    //All materials are assigned for each object here. This can only be done in the editor.
     [Header("Materials")]
     [SerializeField] private Material dissolveMaterial;
     [SerializeField] private Material materialLit;
@@ -18,66 +13,42 @@ public class MaterialChanger : MonoBehaviour
     [SerializeField] private Material edgeViewMaterial;
     [SerializeField] private Material clayViewMaterial;
 
+    //readyToDeactivate is used to detect wether or not object is ready to be deactivated.
+    [HideInInspector] public bool readyToDeactivate = false;
+
+    //These variables hold the information for the material desired to be changed to.
     private Material changerMaterialZero;
     private Material changerMaterialOne;
 
     // Update is called once per frame
     void Update()
     {
-        // first 5 if statements are to be deleted when replaced with buttons!
-
-        if (dissolveActivate)
-        {
-            DissolveActivate();
-            ButtonClick();
-            dissolveActivate = false;
-        }
-
-        if (litViewActivate)
+        if (GetComponent<DissolveShaderScript>().on == true && GetComponent<DissolveShaderScript>().dissolveslider < -0.95f)
         {
             LitViewActivate();
-            ButtonClick();
-            litViewActivate = false;
-        }
-
-        if (unlitViewActivate)
+            readyToDeactivate = false;
+        }else if (GetComponent<DissolveShaderScript>().dissolveslider > 0.95f)
         {
-            UnlitViewActivate();
-            ButtonClick();
-            unlitViewActivate = false;
-        }
-
-        if (edgeViewActivate)
-        {
-            EdgeViewActivate();
-            ButtonClick();
-            edgeViewActivate = false;
-        }
-
-        if (clayViewActivate)
-        {
-            ClayViewActivate();
-            ButtonClick();
-            clayViewActivate = false;
+            LitViewActivate();
+            readyToDeactivate = true;
         }
     }
 
     //This function applies the materials assigned in all seperate material functions.
-    public void ButtonClick()
+    public void ApplyMaterials()
     {
         Material[] materials = new Material[GetComponent<Renderer>().sharedMaterials.Length];
         materials[0] = changerMaterialZero;
         materials[1] = changerMaterialOne;
         GetComponent<MeshRenderer>().sharedMaterials = materials;
     }
-    //Following functions activate view modes by setting the "materials to change" before setting buttonclick to true. 
-    //("Materials to change" refers to the materials called changerMaterialZero and changerMaterialOne)
 
-    //Activates the dissolve effect.
+    //Activates the dissolve effect for fading an object in/out.
     public void DissolveActivate()
     {
         changerMaterialZero = dissolveMaterial;
         changerMaterialOne = dissolveMaterial;
+        ApplyMaterials();
     }
 
     //Activates lit view.
@@ -85,6 +56,7 @@ public class MaterialChanger : MonoBehaviour
     {
         changerMaterialZero = materialLit;
         changerMaterialOne = materialLit;
+        ApplyMaterials();
     }
 
     //Activates unlit view.
@@ -92,6 +64,7 @@ public class MaterialChanger : MonoBehaviour
     {
         changerMaterialZero = materialUnlit;
         changerMaterialOne = materialUnlit;
+        ApplyMaterials();
     }
 
     //Activates edge view.
@@ -99,12 +72,14 @@ public class MaterialChanger : MonoBehaviour
     {
         changerMaterialZero = materialLit;
         changerMaterialOne = edgeViewMaterial;
+        ApplyMaterials();
     }
 
     //Activates clay view.
     public void ClayViewActivate()
     {
-            changerMaterialZero = clayViewMaterial;
-            changerMaterialOne = clayViewMaterial;
+        changerMaterialZero = clayViewMaterial;
+        changerMaterialOne = clayViewMaterial;
+        ApplyMaterials();
     }
 }
