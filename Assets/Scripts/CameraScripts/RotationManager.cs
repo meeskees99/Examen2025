@@ -43,10 +43,14 @@ public class RotationManager : MonoBehaviour
 
     // afstand camera van prefab (WORDT BESTUURD DOOR ZOOM MANAGER)
     [HideInInspector]
-    public float _currentDistanceFromTarget;
+    public float CurrentDistanceFromTarget;
 
     // hier sla ik de nieuwe rotatie waarde op
-    private Quaternion _currentCameraRotation;
+    [HideInInspector]
+    public Quaternion CurrentCameraRotation;
+
+    [SerializeField]
+    private float _maxDistanceFromTarget;
 
     [Header("Objects")]
 
@@ -62,7 +66,7 @@ public class RotationManager : MonoBehaviour
         _yRotation = CameraToRotate.transform.eulerAngles.y;
         _xRotation = CameraToRotate.transform.eulerAngles.x;
 
-        _currentCameraRotation = CameraToRotate.transform.rotation;
+        CurrentCameraRotation = CameraToRotate.transform.rotation;
     }
 
 
@@ -100,10 +104,10 @@ public class RotationManager : MonoBehaviour
                 Quaternion targetRot = Quaternion.Euler(_yRotation, _xRotation, 0);
 
                 // de formule voor het berekenen van een smooth lerp naar nieuwe rotatie
-                _currentCameraRotation = Quaternion.Slerp(_currentCameraRotation, targetRot, Time.deltaTime * _slerpSpeed);
+                CurrentCameraRotation = Quaternion.Slerp(CurrentCameraRotation, targetRot, Time.deltaTime * _slerpSpeed);
 
                 // zet afstand van object in Vector3 formaat
-                Vector3 direction = new Vector3(0, 0, -_currentDistanceFromTarget);
+                Vector3 direction = new Vector3(0, 0, -CurrentDistanceFromTarget);
 
 
                 RotateCamera(direction); // roteer camera
@@ -142,18 +146,37 @@ public class RotationManager : MonoBehaviour
     // functie om de camera te roteren
     void RotateCamera(Vector3 direction)
     {
-        CameraToRotate.transform.position = TransformToLookAt.position + _currentCameraRotation * direction; // bereken rotatie
-        CameraToRotate.transform.LookAt(TransformToLookAt.position); // camera kijkt nogsteeds naar midden punt
+        // bereken nieuwe rotatie
+        Vector3 potentialNewRotation = TransformToLookAt.position + CurrentCameraRotation * direction; // bereken rotatie
+
+        // kijk wat de nieuwe afstand zou worden
+        float newDistance = Vector3.Distance(Prefab.transform.position, potentialNewRotation);
+
+        // kijk of camera mag bewegen
+        if (newDistance <= _maxDistanceFromTarget)
+        {
+            CameraToRotate.transform.position = TransformToLookAt.position + CurrentCameraRotation * direction; // bereken rotatie
+            CameraToRotate.transform.LookAt(TransformToLookAt.position); // camera kijkt nogsteeds naar midden punt
+        }
+        
     }
 
     // functie om de camera te tilten
     void TiltCamera(Vector3 newLocalPosition)
     {
-        // voeg muis input toe aan huidige positie
-        CameraToRotate.transform.position += newLocalPosition;
+        // bereken nieuwe positie
+        Vector3 potentialNewPosition = CameraToRotate.transform.position + newLocalPosition;
 
-        // beweeg transform mee waar camera naar kijkt zodat het draaipunt meebeweegt
-        TransformToLookAt.transform.position += newLocalPosition;
+        // kijk wat de nieuwe afstand zou worden
+        float newDistance = Vector3.Distance(Prefab.transform.position, potentialNewPosition);
+
+        // kijk of camera mag bewegen
+        if (newDistance <= _maxDistanceFromTarget)
+        {
+            CameraToRotate.transform.position = potentialNewPosition;
+            TransformToLookAt.transform.position += newLocalPosition;
+        }
+
     }
 
     // calculeer hier de snelheid van de muis van de user

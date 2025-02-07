@@ -18,8 +18,10 @@ public class ResetCamera : MonoBehaviour
             RotationManager.TransformToLookAt.transform.position = new Vector3(0, 0, 0);
             RotationManager.TransformToLookAt.transform.rotation = new Quaternion();
 
+
             // reset values
             RotationManager.ResetValues();
+            RotationManager.CurrentCameraRotation = new Quaternion();
         }
     }
 }

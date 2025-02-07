@@ -53,7 +53,7 @@ public class ZoomManager : MonoBehaviour
         _distanceFromPrefab = Mathf.Clamp(_distanceFromPrefab, _minDistanceFromPrefab, _maxDistanceFromPrefab);
 
         // pas distance in rotation manager aan
-        RotationManager._currentDistanceFromTarget = _distanceFromPrefab;
+        RotationManager.CurrentDistanceFromTarget = _distanceFromPrefab;
 
     }
 }
