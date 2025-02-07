@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class MaterialChanger : MonoBehaviour
@@ -23,11 +24,14 @@ public class MaterialChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<DissolveShaderScript>().on == true && GetComponent<DissolveShaderScript>().dissolveslider < -0.95f)
+        if (GetComponent<DissolveShaderScript>().on == true && GetComponent<DissolveShaderScript>().dissolveslider > 0.95f && GetComponent<DissolveShaderScript>().done == false)
         {
             LitViewActivate();
             readyToDeactivate = false;
-        }else if (GetComponent<DissolveShaderScript>().dissolveslider > 0.95f)
+
+        }
+
+        if(GetComponent<DissolveShaderScript>().on == false && GetComponent<DissolveShaderScript>().dissolveslider < -0.95f && GetComponent<DissolveShaderScript>().done == false)
         {
             LitViewActivate();
             readyToDeactivate = true;

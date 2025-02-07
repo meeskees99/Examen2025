@@ -1606,7 +1606,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 580769057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230912648
@@ -2198,86 +2199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305838868}
   m_CullTransparentMesh: 1
---- !u!1001 &309548836
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6145736853176087875, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_Name
-      value: Tovenaars Tafel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773936897227370489, guid: 169686593a411d840a52ec8405b1e838,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 169686593a411d840a52ec8405b1e838, type: 3}
---- !u!114 &309548837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8470979534973058546, guid: 169686593a411d840a52ec8405b1e838,
-    type: 3}
-  m_PrefabInstance: {fileID: 309548836}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4ffbff476ba4e42a64fc3ff8a235a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &310126363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,8 +2286,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310126363}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0005364165, y: 0.9820282, z: 0.0026338992, w: 0.18871552}
-  m_LocalPosition: {x: 5.398039, y: -1.2432461, z: -7.5544868}
+  m_LocalRotation: {x: -0.14081231, y: -0.020295145, z: 0.0028936474, w: -0.98982406}
+  m_LocalPosition: {x: -0.20149595, y: 1.9240673, z: -1.7663858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3142,7 +3063,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309548837}
+      - m_Target: {fileID: 580769058}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
         m_MethodName: LitViewActivate
         m_Mode: 1
@@ -3930,6 +3851,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580348366}
   m_CullTransparentMesh: 1
+--- !u!1001 &580769056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 227831139}
+    m_Modifications:
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574212515140808388, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Tover Tafeltje
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: done
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: dissolveslider
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4, type: 3}
+--- !u!4 &580769057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 580769056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &580769058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 580769056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4ffbff476ba4e42a64fc3ff8a235a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596125533
 GameObject:
   m_ObjectHideFlags: 0
@@ -5676,7 +5693,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309548837}
+      - m_Target: {fileID: 580769058}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
         m_MethodName: UnlitViewActivate
         m_Mode: 1
@@ -7374,7 +7391,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309548837}
+      - m_Target: {fileID: 580769058}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
         m_MethodName: ClayViewActivate
         m_Mode: 1
@@ -7452,7 +7469,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309548837}
+      - m_Target: {fileID: 580769058}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
         m_MethodName: EdgeViewActivate
         m_Mode: 1
@@ -15392,4 +15409,3 @@ SceneRoots:
   - {fileID: 1706189648}
   - {fileID: 1847272133}
   - {fileID: 227831139}
-  - {fileID: 309548836}
