@@ -60,7 +60,7 @@ Material:
     - _Float: 2
     - _Ground_Plane: -2
     - _Inverse: 0
-    - _Invert: 1
+    - _Invert: 0
     - _Noise_Scale: 55
     - _Noise_Strength: 0.3
     - _QueueControl: 0
@@ -70,7 +70,7 @@ Material:
     - _Speed: 1
     - _Test: 1
     - _TestTime: 0
-    - _Time_Control: 0.20100956
+    - _Time_Control: -1
     - _Top_Down: 1
     - _speed: 0
     m_Colors:

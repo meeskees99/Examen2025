@@ -6,8 +6,8 @@ public class DissolveShaderScript : MonoBehaviour
 {
 
     public Material dissolveMaterial;
-    public float dissolveslider;
-    public float speed;
+    public float dissolveslider = -1f;
+    public float speed = 0.05f;
     public bool on;
 
     // Start is called before the first frame update
@@ -26,11 +26,21 @@ public class DissolveShaderScript : MonoBehaviour
         {
             dissolveslider += speed * Time.fixedDeltaTime;
         }
-        else if(dissolveMaterial.GetFloat("_Time_Control") > -1f)
+        else if (dissolveMaterial.GetFloat("_Time_Control") > -1f)
         {
             dissolveslider -= speed * Time.fixedDeltaTime;
         }
 
         dissolveMaterial.SetFloat("_Time_Control", dissolveslider);
+    }
+    public void DissolveOn()
+    {
+        dissolveslider = -1f;
+        on = true;
+    }
+    public void DissolveOff()
+    {
+        dissolveslider = 1f;
+        on = false;
     }
 }

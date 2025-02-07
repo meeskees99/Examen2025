@@ -289,7 +289,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13d215012c1e6da4f8b69186a8cc191f, type: 2}
+  - {fileID: 2100000, guid: 956bbf9efc987584790ed5fc0095d5f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -713,6 +713,7 @@ MonoBehaviour:
   dissolveslider: -1
   speed: 0.05
   on: 0
+  canvasman: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
