@@ -4544,6 +4544,79 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &1117631702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1062.6171
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1139.0675
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8af9bc9a194d18040b2486c57d89490e, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6c12addb5c0ffe248b51c988212b3f9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Schroevendraaier Low
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c12addb5c0ffe248b51c988212b3f9d, type: 3}
 --- !u!1 &1145471635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6245,6 +6318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513815267}
   - component: {fileID: 1513815266}
+  - component: {fileID: 1513815268}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6276,6 +6350,7 @@ MonoBehaviour:
   ModelView: {fileID: 1007443688}
   ModelListSkybox: {fileID: 2100000, guid: 6529f1f61b925f149bd2d4c92ed323a1, type: 2}
   ModelViewSkybox: {fileID: 2100000, guid: 94760e841ea3f39469bc98d4c31dca1a, type: 2}
+  currentModelNumber: 0
 --- !u!4 &1513815267
 Transform:
   m_ObjectHideFlags: 0
@@ -6293,6 +6368,23 @@ Transform:
   - {fileID: 1007443689}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513815268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513815265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b0e17f0be85d642971176d51d680be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeoutTime: 30
+  ModelListCanvas: {fileID: 2001579137}
+  ModelViewCanvas: {fileID: 1007443688}
+  ModelListSkybox: {fileID: 2100000, guid: 6529f1f61b925f149bd2d4c92ed323a1, type: 2}
+  lastMovementTime: 0
 --- !u!1 &1523578779
 GameObject:
   m_ObjectHideFlags: 0
@@ -17450,3 +17542,4 @@ SceneRoots:
   - {fileID: 1513815267}
   - {fileID: 262727063}
   - {fileID: 471524754}
+  - {fileID: 1117631702}

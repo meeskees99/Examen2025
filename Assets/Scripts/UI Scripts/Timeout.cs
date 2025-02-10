@@ -6,48 +6,50 @@ using UnityEngine.SceneManagement;
 public class Timeout : MonoBehaviour
 
 {
-    [Header("Idle Settings")]
-    [Tooltip("Time in seconds with no mouse movement before the main menu is shown.")]
-    public float idleTimeThreshold = 10f;
 
-    [Header("Main Menu Canvas")]
-    [Tooltip("The Main Menu canvas to activate when idle.")]
+    public float TimeoutTime = 10f;
+
     public Canvas ModelListCanvas;
     public Canvas ModelViewCanvas;
 
-    // Track the last time the mouse moved and its position.
-    private float lastMovementTime;
+    public Material ModelListSkybox;
+
+    public float lastMovementTime;
     private Vector3 lastMousePosition;
 
     void Start()
     {
-        // Record the initial mouse position and time.
-        lastMovementTime = Time.time;
-        lastMousePosition = Input.mousePosition;
-
-        // Ensure the main menu canvas is hidden at the start.
+        // checked of de model list canvas uit staat en de model view canvas aan staat
         if (ModelListCanvas != null)
         {
             ModelListCanvas.gameObject.SetActive(false);
+        }
+        if  (ModelViewCanvas != null)
+        {
+            ModelViewCanvas.gameObject.SetActive(true);
         }
     }
 
     void Update()
     {
-        // Check if the mouse has moved.
+        // Kijkt of de muis heeft bewogen
         if (Input.mousePosition != lastMousePosition)
         {
-            lastMovementTime = Time.time;
-            lastMousePosition = Input.mousePosition;
+            lastMovementTime = 0;
+            
         }
 
+        lastMovementTime += Time.deltaTime;
+        lastMousePosition = Input.mousePosition;
+
         // Als de muis lang genoeg stil staat dan laad hij de ModelViewCanvas
-        if (Time.time - lastMovementTime >= idleTimeThreshold)
+        if (lastMovementTime >= TimeoutTime)
         {
             if (ModelListCanvas != null && !ModelListCanvas.gameObject.activeSelf)
             {
                 ModelListCanvas.gameObject.SetActive(true);
                 ModelViewCanvas.gameObject.SetActive(false);
+                RenderSettings.skybox = ModelListSkybox;
 
             }
         }
