@@ -8,11 +8,16 @@ public class CanvasManager : MonoBehaviour
 {
 
     public GameObject[] GameObjectToShow;
+
     public Canvas AssetList;
     public Canvas ModelView;
+
     public Material ModelListSkybox;
     public Material ModelViewSkybox;
+
     public int currentModelNumber;
+
+    [SerializeField] private MaterialManager materialManager;
 
 
     // Start is called before the first frame update
@@ -31,16 +36,34 @@ public class CanvasManager : MonoBehaviour
         currentModelNumber = objectNumber;
         if (AssetList != null) AssetList.gameObject.SetActive(false);
         if (ModelView != null) ModelView.gameObject.SetActive(true);
-        GameObjectToShow[objectNumber].SetActive(true);
         RenderSettings.skybox = ModelViewSkybox;
+        GameObjectToShow[objectNumber].SetActive(true);
+        
+        if (materialManager.readyToActivate == true)
+        {
+            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().on = true;
+            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().done = false;
+        }
+        //else
+        //{
+
+        //}
          
     }
         public void Back()
     {
-        if (AssetList != null) AssetList.gameObject.SetActive(true);
-        if (ModelView != null) ModelView.gameObject.SetActive(false);
-        GameObjectToShow[currentModelNumber].SetActive(false);
-        RenderSettings.skybox = ModelListSkybox;
+        if (materialManager.readyToDeactivate == true)
+        {
+            GameObjectToShow[currentModelNumber].SetActive(false);
+            if (AssetList != null) AssetList.gameObject.SetActive(true);
+            if (ModelView != null) ModelView.gameObject.SetActive(false);
+            RenderSettings.skybox = ModelListSkybox;
+        }
+        else
+        {
+            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().on = false;
+            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().done = false;
+        }
 
     }
 }
