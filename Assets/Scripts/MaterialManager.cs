@@ -8,12 +8,12 @@ using UnityEngine;
 public class MaterialManager : MonoBehaviour
 {
     /*All materials are assigned by int values, the values are as follows:
-     * 0 = edge material (per object)
-     * 1 = lit material (per object)
-     * 2 = unlit material (per object)
-     * 3 = clay material (per object)
-     * 4 = dissolve shader (per object)
-     the order in the editor in the MaterialHolder script need to be in this order always!*/
+     * 0 = Edge material (per object)
+     * 1 = Lit material (per object)
+     * 2 = Unlit material (per object)
+     * 3 = Clay material (per object)
+     * 4 = Dissolve shader (per object)
+     The order in the editor in the MaterialHolder script need to be in this order always!*/
      
     [Header("Materials")]
     [SerializeField] private Material[] assignedMaterials;
@@ -22,7 +22,7 @@ public class MaterialManager : MonoBehaviour
     [HideInInspector] public bool readyToDeactivate = false;
     [SerializeField] private CanvasManager canvasManager;
 
-    // Update is used for checking if the dissolveshader is done with dissolving by asking if it is done and communicates using a boolean (readyToDeactivate) to say if it can be deactivated.
+    // Update is used for checking if the dissolveshader is done with dissolving by asking and then setting a boolean (readyToDeactivate) to say if it can be deactivated by another script called canvasManager.
     void Update()
     {
         if(GetComponent<DissolveShaderScript>().dissolveslider > 0.95f && GetComponent<DissolveShaderScript>().done == true)
