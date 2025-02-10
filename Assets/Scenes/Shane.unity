@@ -1587,8 +1587,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227831139}
+  - component: {fileID: 227831140}
   m_Layer: 0
-  m_Name: Models
+  m_Name: ModelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1610,6 +1611,26 @@ Transform:
   - {fileID: 580769057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227831140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227831138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4ffbff476ba4e42a64fc3ff8a235a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignedMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  readyToDeactivate: 0
+  canvasManager: {fileID: 1706189647}
 --- !u!1 &230912648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1766,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230912648}
   m_CullTransparentMesh: 1
+--- !u!1 &264141592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7574212515140808388, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 580769056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &281870746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,14 +3090,14 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 580769058}
+      - m_Target: {fileID: 227831140}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
-        m_MethodName: LitViewActivate
-        m_Mode: 1
+        m_MethodName: MaterialChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3859,6 +3886,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 227831139}
     m_Modifications:
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b842bdb6f2d9bf4c8bea6da3e6c8618, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55b533db0c09dc04ca9a48239b127c6e, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec8974a829511194c9db4a916aa1a64e, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cf8e2ecccd3a274193ca25e2723303d, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d94326614fdf814fb5900bd23638601, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b842bdb6f2d9bf4c8bea6da3e6c8618, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55b533db0c09dc04ca9a48239b127c6e, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec8974a829511194c9db4a916aa1a64e, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cf8e2ecccd3a274193ca25e2723303d, type: 2}
+    - target: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: assignedMaterials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d94326614fdf814fb5900bd23638601, type: 2}
     - target: {fileID: 7086082560454390910, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3924,10 +4011,20 @@ PrefabInstance:
       propertyPath: dissolveslider
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8223008144883093265, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55b533db0c09dc04ca9a48239b127c6e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7574212515140808388, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 580769062}
   m_SourcePrefab: {fileID: 100100000, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4, type: 3}
 --- !u!4 &580769057 stripped
 Transform:
@@ -3935,18 +4032,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 580769056}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &580769058 stripped
+--- !u!114 &580769062
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1631880698166070083, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 580769056}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 264141592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4ffbff476ba4e42a64fc3ff8a235a4, type: 3}
+  m_Script: {fileID: 11500000, guid: b73d5a341ca10cf4b8a63b5fb4a1e902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heldMaterials:
+  - {fileID: 2100000, guid: 5cf8e2ecccd3a274193ca25e2723303d, type: 2}
+  - {fileID: 2100000, guid: 55b533db0c09dc04ca9a48239b127c6e, type: 2}
+  - {fileID: 2100000, guid: ec8974a829511194c9db4a916aa1a64e, type: 2}
+  - {fileID: 2100000, guid: 9d94326614fdf814fb5900bd23638601, type: 2}
+  - {fileID: 2100000, guid: 1b842bdb6f2d9bf4c8bea6da3e6c8618, type: 2}
 --- !u!1 &596125533
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,14 +5796,14 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 580769058}
+      - m_Target: {fileID: 227831140}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
-        m_MethodName: UnlitViewActivate
-        m_Mode: 1
+        m_MethodName: MaterialChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7391,14 +7494,14 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 580769058}
+      - m_Target: {fileID: 227831140}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
-        m_MethodName: ClayViewActivate
-        m_Mode: 1
+        m_MethodName: MaterialChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7469,10 +7572,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 580769058}
+      - m_Target: {fileID: 227831140}
         m_TargetAssemblyTypeName: MaterialChanger, Assembly-CSharp
-        m_MethodName: EdgeViewActivate
-        m_Mode: 1
+        m_MethodName: MaterialChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12356,6 +12459,7 @@ MonoBehaviour:
   ModelView: {fileID: 680168553}
   ModelListSkybox: {fileID: 2100000, guid: 6529f1f61b925f149bd2d4c92ed323a1, type: 2}
   ModelViewSkybox: {fileID: 2100000, guid: 94760e841ea3f39469bc98d4c31dca1a, type: 2}
+  currentModelNumber: 0
 --- !u!4 &1706189648
 Transform:
   m_ObjectHideFlags: 0
