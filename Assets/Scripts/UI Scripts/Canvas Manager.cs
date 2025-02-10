@@ -12,7 +12,7 @@ public class CanvasManager : MonoBehaviour
     public Canvas ModelView;
     public Material ModelListSkybox;
     public Material ModelViewSkybox;
-    private int currentModelNumber;
+    public int currentModelNumber;
 
 
     // Start is called before the first frame update
