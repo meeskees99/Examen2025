@@ -1,0 +1,54 @@
+{
+    "name": "CameraInput",
+    "maps": [
+        {
+            "name": "MouseControls",
+            "id": "3222dbdc-bcf4-4f7e-a9bc-4de676d1772f",
+            "actions": [
+                {
+                    "name": "Rotation",
+                    "type": "Button",
+                    "id": "e12cff2e-f193-4b12-afbc-43d0693b2572",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tilting",
+                    "type": "Button",
+                    "id": "af9aeba6-8ce7-4378-a5c3-4633e32eb26b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3fd459d6-fad3-4cc8-a204-2d67ba91c812",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6e69b11-d5fa-4513-b149-262be4cc28a9",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

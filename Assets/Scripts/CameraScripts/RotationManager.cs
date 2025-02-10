@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.InputSystem;
 
 public class RotationManager : MonoBehaviour
 {
@@ -52,11 +53,88 @@ public class RotationManager : MonoBehaviour
     [SerializeField]
     private float _maxDistanceFromTarget;
 
+    // nieuwe input system
+    [SerializeField]
+    private PlayerInput playerInput;
+    private InputAction rotateAction;
+    private InputAction tiltAction;
+
+
     [Header("Objects")]
 
     public Camera CameraToRotate;
     public Transform TransformToLookAt; // position waar de camera altijd naar kijkt (kan niet de camera zelf zijn door tilten)
     public GameObject Prefab;
+
+    private void Awake()
+    {
+        // Assign actions from input asset
+        rotateAction = playerInput.actions.FindActionMap("MouseControls").FindAction("Rotation");
+        tiltAction = playerInput.actions.FindActionMap("MouseControls").FindAction("Tilting");
+    }
+
+    void OnEnable()
+    {
+        rotateAction.Enable();
+        rotateAction.started += OnRotationStart;  
+        rotateAction.canceled += OnRotationEnd;  
+
+        tiltAction.Enable();
+        tiltAction.started += OnTiltingStart;  
+        tiltAction.canceled += OnTiltingEnd; 
+    }
+
+    void OnDisable()
+    {
+        rotateAction.started -= OnRotationStart;
+        rotateAction.canceled -= OnRotationEnd;
+        rotateAction.Disable();
+
+        tiltAction.started -= OnTiltingStart;
+        tiltAction.canceled -= OnTiltingEnd;
+        tiltAction.Disable();
+    }
+
+    // wanneer user wil roteren
+    private void OnRotationStart(InputAction.CallbackContext context)
+    {
+        // verander state
+        if (_rotationState == RotationState.NotActive)
+        {
+            _rotationState = RotationState.Rotating;
+            Debug.Log("Rotation Started");
+        }
+    }
+
+    // wanneer user stopt met roteren
+    private void OnRotationEnd(InputAction.CallbackContext context)
+    {
+        // verander state
+        if (_rotationState == RotationState.Rotating)
+        {
+            _rotationState = RotationState.NotActive;
+            Debug.Log("Rotation Ended");
+        }
+    }
+
+    // wanneer user wil tilten
+    private void OnTiltingStart(InputAction.CallbackContext context)
+    {
+        // Change state to tilting
+        _rotationState = RotationState.Tilting;
+        Debug.Log("Tilting Started");
+    }
+
+    // wanneer user stopt met tilten
+    private void OnTiltingEnd(InputAction.CallbackContext context)
+    {
+        // Change state to not active
+        if (_rotationState == RotationState.Tilting)
+        {
+            _rotationState = RotationState.NotActive;
+            Debug.Log("Tilting Ended");
+        }
+    }
 
 
     // ik zet hier de begin waardes goed
@@ -78,11 +156,11 @@ public class RotationManager : MonoBehaviour
 
                 print("not active");
                 // kijk of user wil rotaten (als de linker muis knop is ingedrukt en er een positie is om naar te kijken)
-                if (Input.GetMouseButtonDown(0) && TransformToLookAt != null)
+                if (rotateAction.triggered && TransformToLookAt != null)
                     _rotationState = RotationState.Rotating;
 
                 // kijk of de user wil tilten (als de rechter muis knop is ingedrukt)
-                else if (Input.GetMouseButtonDown(1))
+                else if (tiltAction.triggered)
                     _rotationState = RotationState.Tilting;
 
                 break;
@@ -112,12 +190,6 @@ public class RotationManager : MonoBehaviour
 
                 RotateCamera(direction); // roteer camera
 
-
-
-                // als button wordt losgelaten, ga naar niet active
-                if (Input.GetMouseButtonUp(0))
-                    _rotationState = RotationState.NotActive;
-
                 break;
 
 
@@ -133,10 +205,6 @@ public class RotationManager : MonoBehaviour
                 Vector3 newLocalPosition = CameraToRotate.transform.rotation * newPosition;
 
                 TiltCamera(newLocalPosition);
-
-                // als button wordt losgelaten, ga naar niet active
-                if (Input.GetMouseButtonUp(1))
-                    _rotationState = RotationState.NotActive;
 
                 break;
         }
