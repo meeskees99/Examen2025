@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 94760e841ea3f39469bc98d4c31dca1a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c6f39a57361e5d8468aeb4c3c9c96670, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1099,8 +1099,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Scroll Klik: Camera Resetten'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
+  m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2996,6 +2997,7 @@ GameObject:
   - component: {fileID: 657663473}
   - component: {fileID: 657663472}
   - component: {fileID: 657663471}
+  - component: {fileID: 657663474}
   m_Layer: 5
   m_Name: Day/Night
   m_TagString: Untagged
@@ -3075,6 +3077,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657663469}
   m_CullTransparentMesh: 1
+--- !u!114 &657663474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657663469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a924d3adb33d347a2bcec5897cc649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayShader: {fileID: 2100000, guid: d0f8f01f9d2221a41853c13f53bab5b8, type: 2}
+  NightShader: {fileID: 2100000, guid: bc1dc1a74a3a0d34199ac3d0c6adc9aa, type: 2}
+  Day: {fileID: 1803893896}
 --- !u!1 &698204508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,7 +3353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.45490196, g: 0.45490196, b: 0.45490196, a: 0.5882353}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3419,8 +3436,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: ShortCuts
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
+  m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4544,79 +4562,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1001 &1117631702
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1062.6171
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.000030517578
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1139.0675
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8af9bc9a194d18040b2486c57d89490e, type: 2}
-    - target: {fileID: 919132149155446097, guid: 6c12addb5c0ffe248b51c988212b3f9d,
-        type: 3}
-      propertyPath: m_Name
-      value: Schroevendraaier Low
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6c12addb5c0ffe248b51c988212b3f9d, type: 3}
 --- !u!1 &1145471635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,8 +4773,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Scrollen: In/uit zoomen'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
+  m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5600,8 +5546,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Rechter Muisklik: Bewegen'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
+  m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5809,8 +5756,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Linker Muisklik: Draaien'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
+  m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6349,7 +6297,7 @@ MonoBehaviour:
   AssetList: {fileID: 2001579137}
   ModelView: {fileID: 1007443688}
   ModelListSkybox: {fileID: 2100000, guid: 6529f1f61b925f149bd2d4c92ed323a1, type: 2}
-  ModelViewSkybox: {fileID: 2100000, guid: 94760e841ea3f39469bc98d4c31dca1a, type: 2}
+  ModelViewSkybox: {fileID: 2100000, guid: d0f8f01f9d2221a41853c13f53bab5b8, type: 2}
   currentModelNumber: 0
 --- !u!4 &1513815267
 Transform:
@@ -6580,6 +6528,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543306567}
   m_CullTransparentMesh: 1
+--- !u!1001 &1564267712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7261355690846280924, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Schroevendraaier Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038454932155074150, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73f8f970662a03b4aaab51cbd19020f2, type: 3}
 --- !u!1 &1577815615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7344,12 +7360,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 843552045}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 490721514}
+        m_TargetAssemblyTypeName: UnityEngine.Light, UnityEngine
+        m_MethodName: set_intensity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1776662776
 GameObject:
   m_ObjectHideFlags: 0
@@ -7586,13 +7614,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 657663474}
+        m_TargetAssemblyTypeName: SkyBoxChanger, Assembly-CSharp
+        m_MethodName: Skybox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17542,4 +17570,4 @@ SceneRoots:
   - {fileID: 1513815267}
   - {fileID: 262727063}
   - {fileID: 471524754}
-  - {fileID: 1117631702}
+  - {fileID: 1564267712}
