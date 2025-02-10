@@ -20,29 +20,27 @@ public class MaterialManager : MonoBehaviour
 
     //readyToDeactivate is used to detect wether or not object is ready to be deactivated.
     [HideInInspector] public bool readyToDeactivate = false;
+    [HideInInspector] public bool readyToActivate = false;
     [SerializeField] private CanvasManager canvasManager;
 
     // Update is used for checking if the dissolveshader is done with dissolving by asking and then setting a boolean (readyToDeactivate) to say if it can be deactivated by another script called canvasManager.
     void Update()
     {
-        if(GetComponent<DissolveShaderScript>().dissolveslider > 0.95f && GetComponent<DissolveShaderScript>().done == true)
+        if(canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().dissolveslider > 0.95f && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == true)
         {
             MaterialChange(1);
-            readyToDeactivate = true;
+            readyToActivate = true;
         }
-        else if(readyToDeactivate == true && GetComponent<DissolveShaderScript>().done == false)
+        else if(readyToDeactivate == true && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == false)
         {
+
             readyToDeactivate = false;
         }
 
-        if(GetComponent<DissolveShaderScript>().dissolveslider < -0.95f && GetComponent<DissolveShaderScript>().done == true)
+        if(canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().dissolveslider < -0.95f && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == true)
         {
             MaterialChange(1);
             readyToDeactivate = true;
-        }
-        else if(readyToDeactivate == true && GetComponent<DissolveShaderScript>().done == false)
-        {
-            readyToDeactivate = false;
         }
     }
 

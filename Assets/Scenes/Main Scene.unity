@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9142a95a389730429bcfc9959e83c02, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7348,6 +7348,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   readyToDeactivate: 0
+  readyToActivate: 0
   canvasManager: {fileID: 1513815266}
 --- !u!4 &1581053278
 Transform:
@@ -14697,7 +14698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f93745ec061bf254da26eb691c8c8ac9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18648,7 +18649,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 490721515}
   - {fileID: 471524754}
-  - {fileID: 1651299915}
   - {fileID: 1513815267}
+  - {fileID: 1651299915}
   - {fileID: 1833877927}
   - {fileID: 669494371}
