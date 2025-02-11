@@ -3120,7 +3120,7 @@ RectTransform:
   m_Father: {fileID: 1896802482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4329,9 +4329,9 @@ RectTransform:
   - {fileID: 1918209865}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -704}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913930708
@@ -5668,9 +5668,9 @@ RectTransform:
   - {fileID: 705237994}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -1104}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203428728
@@ -6974,6 +6974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
         type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
       propertyPath: materialManager
       value: 
       objectReference: {fileID: 1581053277}
@@ -7425,9 +7430,9 @@ RectTransform:
   - {fileID: 2027660428}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -504}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596835686
@@ -7685,9 +7690,9 @@ RectTransform:
   - {fileID: 1900230213}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -904}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670758179
@@ -7909,12 +7914,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776662777}
-  m_Father: {fileID: 1896802482}
+  m_Father: {fileID: 1978164458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1.25, y: 0}
-  m_SizeDelta: {x: 19, y: -64}
+  m_AnchoredPosition: {x: -27.884644, y: 809.8956}
+  m_SizeDelta: {x: 19, y: 724.2088}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1703298327
 MonoBehaviour:
@@ -8786,7 +8791,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 586427845}
-  - {fileID: 1703298326}
   m_Father: {fileID: 1413278302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9168,9 +9172,9 @@ RectTransform:
   - {fileID: 577213115}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -304}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933247620
@@ -9394,11 +9398,12 @@ RectTransform:
   m_Children:
   - {fileID: 1341751494}
   - {fileID: 902543}
+  - {fileID: 1703298326}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -1304}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978164459
@@ -10605,12 +10610,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Dit is een versleten skateboard model, het duurde mij twee dagen om dit
+    af te krijgen. \nIk heb me met het modellen bezig gehouden om het skateboard
+    realistisch te houden. Tijdens het texturen heb ik eerst alle base colors gemaakt
+    en het vanuit daar uitgebreidt met ambient occlusion en peeling effects etc."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -10753,10 +10756,10 @@ RectTransform:
   - {fileID: 2321362060860005318}
   m_Father: {fileID: 6286077345154957320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.499939}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchorMin: {x: 0.38556674, y: 0.30220878}
+  m_AnchorMax: {x: 0.61483365, y: 0.732187}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355991342397842446
 MonoBehaviour:
@@ -10778,12 +10781,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: 'Ik heb dit melk pak gemaakt omdat ik melk erg lekker vind. DIt melk pak
+    is zelf verzonnen.  Het model is in 1 dag gemaakt en texures er op gezet(kleuren
+    toepassen).
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -10811,7 +10813,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.65
+  m_fontSize: 30
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10881,12 +10883,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Ik heb deze schroevendraaier gemaakt omdat ik zelf graak aan dingen sleutel.\n
+    Deze schroevendraaier is zelf verzonnem.\nHet model is in 1 dag gemaakt en texures
+    er op gezet(kleuren toepassen)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -10914,7 +10913,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.65
+  m_fontSize: 30
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10979,10 +10978,10 @@ RectTransform:
   - {fileID: 2415687732952940850}
   m_Father: {fileID: 6236851362703563516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.499939}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchorMin: {x: 0.38556674, y: 0.31081316}
+  m_AnchorMax: {x: 0.6145668, y: 0.7322087}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418417897513803797
 MonoBehaviour:
@@ -11207,14 +11206,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t 262\nTexture Sets:\u2003   1\nResolutie:\u2003        2k\nGebruikte
+    software:\nModelering:\tBlender\nTexturing:\u2003    \u2003Substance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -11341,14 +11334,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \u2003 \u2003 18.500\nTexture Sets:\u2003  1\nResolutie:\t4k\nGebruikte
+    software:\nModelering:\tBlender\nTexturing:\tSubstance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -11846,12 +11833,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: 'Dit is een old school 2-player arcade kast. Ik heb hier zo''n twee dagen
+    over gedaan.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -11959,12 +11944,12 @@ GameObject:
   - component: {fileID: 20293312839929042}
   - component: {fileID: 214025482154448082}
   m_Layer: 5
-  m_Name: Fles
+  m_Name: Melk Pak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2091976938337190144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11990,7 +11975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2178105792149460882
 GameObject:
   m_ObjectHideFlags: 0
@@ -12025,9 +12010,9 @@ RectTransform:
   - {fileID: 554564491529374496}
   m_Father: {fileID: 531947960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -104}
   m_SizeDelta: {x: 660, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2217686167916119260
@@ -13767,14 +13752,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t16.000\nTexture Sets:\u2003  1\nResolutie:\u2003        4k\nGebruikte
+    software:\nModelering:\tBlender\nTexturing:\u2003    \u2003Substance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -15925,9 +15904,9 @@ RectTransform:
   - {fileID: 387935480595839992}
   m_Father: {fileID: 2750967790097819265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -437.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.000030518, y: 58.5}
   m_SizeDelta: {x: 697.7, y: 116.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6242419042841980103
@@ -15971,9 +15950,9 @@ RectTransform:
   - {fileID: 347661233801109772}
   m_Father: {fileID: 2854292527305899125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -437.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.000030518, y: 58.5}
   m_SizeDelta: {x: 697.7, y: 116.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6295535871439559042
@@ -16034,12 +16013,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Deze grasmaaier is in 2 dagen tijd gemaakt. De eerste dag was gebruikt
+    voor het modeleren van het \nmodel en de 2e dag voor het texturen van het model
+    (kleur toepassen) \nOndanks dat het model een `handpainted` look heeft, \nis
+    het niet met de hand gepaint, maar er is veel gebruik gemaakt van generators
+    en \nfilters die voor het `paint` effect zorgen.\n \nDeze grasmaaier had exact
+    de zelfde workflow als de tovenaars tafel."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -16545,9 +16524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fles
-
-'
+  m_text: Melk Pak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -16833,14 +16810,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t 7.092\nTexture Sets:\u2003   1\nResolutie:\u2003       
+    4k\nGebruikte software:\nModelering:\tBlender\nTexturing:\u2003    \u2003Substance
+    Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -16930,14 +16902,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t       310\nTexture Sets:\u2003  1\nResolutie:\u2003       
+    4k\nGebruikte software:\nModelering:\tBlender\nTexturing:\t\tSubstance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -17053,14 +17019,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t        241\nTexture Sets:\u2003  1\nResolutie:\u2003       
+    4k\nGebruikte software:\nModelering:\tBlender\nTexturing:\t\tSubstance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -17292,12 +17252,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Deze tovenaars tafel is in 2 dagen tijd gemaakt. De eerste dag was gebruikt
+    voor het modeleren van het \nmodel en de 2e dag voor het texturen van het model
+    (kleur toepassen) \nOndanks dat het model een `handpainted` look heeft, \nis
+    het niet met de hand gepaint, maar er is veel gebruik gemaakt van generators
+    en \nfilters die voor het `paint` effect zorgen\n \nDeze tovenaars tafel had
+    exact de zelfde workflow als de grasmaaier."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -17443,12 +17403,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: 'Dit is een simpel fruit pakje gemaakt door Nathan Vrieswijk. Het model
+    en textures is in een paar uur gemaakt. Het texturen  kostte mij het meeste tijd
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
@@ -18407,14 +18365,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Poly Count :
-
-    Texture sets:
-
-    Texture resolution:
-
-    Gebruikte
-    software:'
+  m_text: "Polycount: \t4.132\nTexture Sets:\u2003  1\nResolutie:\u2003        4k\nGebruikte
+    software:\nModelering:\tBlender\nTexturing:\u2003    \u2003Substance Painter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 736cf8268842c3246888437590675671, type: 2}
   m_sharedMaterial: {fileID: 2782220469586270432, guid: 736cf8268842c3246888437590675671,
