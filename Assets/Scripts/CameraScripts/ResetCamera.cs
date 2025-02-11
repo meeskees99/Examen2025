@@ -6,10 +6,12 @@ public class ResetCamera : MonoBehaviour
 {
     public RotationManager RotationManager;
 
+    [HideInInspector]
+    public bool ResetViewerCamera;
     void Update()
     {
-        // reset camera
-        if(Input.GetMouseButtonDown(2))
+        // reset camera door input of door CanvasManager
+        if(Input.GetMouseButtonDown(2) || ResetViewerCamera)
         {
             // reset camera position/rotation
             RotationManager.CameraToRotate.transform.position = new Vector3(0, 0, -5);
@@ -22,6 +24,7 @@ public class ResetCamera : MonoBehaviour
             // reset values
             RotationManager.ResetValues();
             RotationManager.CurrentCameraRotation = new Quaternion();
+            ResetViewerCamera = false;
         }
     }
 }

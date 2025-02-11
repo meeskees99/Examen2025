@@ -19,6 +19,7 @@ public class CanvasManager : MonoBehaviour
     public int currentModelNumber;
 
     [SerializeField] private MaterialManager materialManager;
+    [SerializeField] private ResetCamera resetCamera;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,9 @@ public class CanvasManager : MonoBehaviour
         //Activates the dissolve material through MaterialManager and toggles dissolve in a direction of "loading in";
         materialManager.ActivateDissolveMaterial();
         GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().DissolveOn();
+
+        // reset camera positie/rotatie als een object wordt geactiveerd door de user.
+        resetCamera.ResetViewerCamera = true;
     }
     //Activates the ActivateDissolveMaterial function in the MaterialManager, and communicates with the DissolveShaderScript and toggles the dissolve in a direction of "loading out";
     public void Back()

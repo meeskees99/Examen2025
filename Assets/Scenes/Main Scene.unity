@@ -3295,6 +3295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationManager: {fileID: 1525322287}
+  ResetViewerCamera: 0
 --- !u!1 &648698647
 GameObject:
   m_ObjectHideFlags: 0
@@ -6885,6 +6886,7 @@ MonoBehaviour:
   ModelViewSkybox: {fileID: 2100000, guid: d0f8f01f9d2221a41853c13f53bab5b8, type: 2}
   currentModelNumber: 0
   materialManager: {fileID: 1581053277}
+  resetCamera: {fileID: 619409675}
 --- !u!4 &1513815267
 Transform:
   m_ObjectHideFlags: 0
@@ -7142,6 +7144,8 @@ MonoBehaviour:
   CurrentCameraRotation: {x: 0, y: 0, z: 0, w: 0}
   _maxDistanceFromTarget: 20
   playerInput: {fileID: 1833877928}
+  ViewerCanvas: {fileID: 1007443685}
+  ViewerSlider: {fileID: 1725093342}
   CameraToRotate: {fileID: 783943846}
   TransformToLookAt: {fileID: 2124867928}
   Prefab: {fileID: 362330755}
@@ -7955,8 +7959,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 482947940}
   m_HandleRect: {fileID: 482947939}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.7378314
+  m_Value: 0.99999976
+  m_Size: 0.7038524
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

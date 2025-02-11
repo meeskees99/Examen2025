@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
-using static UnityEngine.GraphicsBuffer;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class RotationManager : MonoBehaviour
 {
@@ -59,6 +58,15 @@ public class RotationManager : MonoBehaviour
     private InputAction rotateAction;
     private InputAction tiltAction;
 
+    // UI components checks
+    [Header("UI Components")]
+    public GameObject ViewerCanvas;
+    public Slider ViewerSlider;
+
+    // slider check
+    private Coroutine checkStopSliderCoroutine;
+    private float lastSliderValue;
+    private bool _isSliderMoving = false;
 
     [Header("Objects")]
 
@@ -66,9 +74,11 @@ public class RotationManager : MonoBehaviour
     public Transform TransformToLookAt; // position waar de camera altijd naar kijkt (kan niet de camera zelf zijn door tilten)
     public GameObject Prefab;
 
+
+    // ------------- BEGIN INPUT MANAGER ------------------
     private void Awake()
     {
-        // Assign actions from input asset
+
         rotateAction = playerInput.actions.FindActionMap("MouseControls").FindAction("Rotation");
         tiltAction = playerInput.actions.FindActionMap("MouseControls").FindAction("Tilting");
     }
@@ -136,10 +146,41 @@ public class RotationManager : MonoBehaviour
         }
     }
 
+    // ------------- EINDE INPUT MANAGER ----------------
 
-    // ik zet hier de begin waardes goed
+
+    // ------------- BEGIN UI SLIDER CHECK ---------------
+    private void OnSliderValueChanged(float value)
+    {
+        _isSliderMoving = true;
+
+        // check of de "check of is gestopt" coroutine al is geactiveerd
+        if (checkStopSliderCoroutine != null)
+            StopCoroutine(checkStopSliderCoroutine);
+
+        checkStopSliderCoroutine = StartCoroutine(CheckIfSliderStopped());
+    }
+
+    private IEnumerator CheckIfSliderStopped()
+    {
+        lastSliderValue = ViewerSlider.value;
+
+        yield return new WaitForSeconds(0.05f); // bepaal hier wacht tijd voor het checken om te stoppen
+
+        // als waardes gelijk zijn (dus niet bewogen)
+        if (Mathf.Approximately(ViewerSlider.value, lastSliderValue))
+        {
+            _isSliderMoving = false;
+        }
+    }
+
+    // --------- EINDE UI SLIDER CHECK ----------------
+
     void Start()
     {
+
+        // slider UI check
+        ViewerSlider.onValueChanged.AddListener(OnSliderValueChanged);
 
         _yRotation = CameraToRotate.transform.eulerAngles.y;
         _xRotation = CameraToRotate.transform.eulerAngles.x;
@@ -169,7 +210,16 @@ public class RotationManager : MonoBehaviour
             case RotationState.Rotating:
 
                 print("rotating");
-                CalculateMouseSpeed(_rotationSpeed); // calculeer muis snelheid
+
+                // check of user in goede UI settings zit om te mogen roteren
+                if (ViewerCanvas.activeInHierarchy && _isSliderMoving == false)
+                    CalculateMouseSpeed(_rotationSpeed); // calculeer muis snelheid
+                else
+                {
+                    _horizontalMouseSpeed = 0;
+                    _verticalMouseSpeed = 0;
+                }
+               
 
                 // sla nieuwe rotatie waardes op gebaseerd op muis bewegingen
                 _xRotation += _horizontalMouseSpeed;
@@ -187,7 +237,7 @@ public class RotationManager : MonoBehaviour
                 // zet afstand van object in Vector3 formaat
                 Vector3 direction = new Vector3(0, 0, -CurrentDistanceFromTarget);
 
-
+                
                 RotateCamera(direction); // roteer camera
 
                 break;
