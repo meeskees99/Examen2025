@@ -436,6 +436,34 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "3fe0bc1661254cef994c1e548dc7a4fb"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "71d193998471414c94d765e6d9592a74"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "44ef14669dbc414d8d141cdf32e78561"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "6e74be508c9c49b0b8a41d4b8110d980"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "46bf9a5ddbff4b8fb905da337953fd83"
                 },
                 "m_SlotId": 3
@@ -951,10 +979,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1880.0,
-            "y": 860.0,
+            "x": -1868.0,
+            "y": 860.7999877929688,
             "width": 143.199951171875,
-            "height": 33.5999755859375
+            "height": 33.60003662109375
         }
     },
     "m_Slots": [
@@ -2285,7 +2313,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 1.0,
+    "m_Value": 0.5,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -3680,7 +3708,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 2.0,
+    "m_Value": 3.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -4542,7 +4570,7 @@
     "m_ObjectId": "a2deaecb85da409681b59487f8c65d30",
     "m_Title": "TIME/HEIGHT",
     "m_Position": {
-        "x": -1905.599853515625,
+        "x": -1901.5999755859375,
         "y": 761.5999755859375
     }
 }
@@ -4663,7 +4691,7 @@
     "m_Title": "NOISE",
     "m_Position": {
         "x": -2047.2001953125,
-        "y": 279.1998291015625
+        "y": 279.2000427246094
     }
 }
 
