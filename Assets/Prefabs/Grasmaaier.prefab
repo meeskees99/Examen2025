@@ -111,9 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveMaterial: {fileID: 2100000, guid: dc0ad4951f9ad3e49999ddc1c2ad3805, type: 2}
   dissolveslider: 0
-  speed: 0.05
+  speed: 1
   on: 1
   done: 0
+  materialManager: {fileID: 0}
 --- !u!114 &8167799709774468337
 MonoBehaviour:
   m_ObjectHideFlags: 0
