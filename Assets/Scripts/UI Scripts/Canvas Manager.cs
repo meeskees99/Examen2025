@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -38,32 +39,23 @@ public class CanvasManager : MonoBehaviour
         if (ModelView != null) ModelView.gameObject.SetActive(true);
         RenderSettings.skybox = ModelViewSkybox;
         GameObjectToShow[objectNumber].SetActive(true);
-        
-        if (materialManager.readyToActivate == true)
-        {
-            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().on = true;
-            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().done = false;
-        }
-        //else
-        //{
 
-        //}
-         
+        //Activates the dissolve material through MaterialManager and toggles dissolve in a direction of "loading in";
+        materialManager.ActivateDissolveMaterial();
+        GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().DissolveOn();
     }
-        public void Back()
+    //Activates the ActivateDissolveMaterial function in the MaterialManager, and communicates with the DissolveShaderScript and toggles the dissolve in a direction of "loading out";
+    public void Back()
     {
-        if (materialManager.readyToDeactivate == true)
-        {
-            GameObjectToShow[currentModelNumber].SetActive(false);
-            if (AssetList != null) AssetList.gameObject.SetActive(true);
-            if (ModelView != null) ModelView.gameObject.SetActive(false);
-            RenderSettings.skybox = ModelListSkybox;
-        }
-        else
-        {
-            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().on = false;
-            GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().done = false;
-        }
-
+        materialManager.ActivateDissolveMaterial();
+        GameObjectToShow[currentModelNumber].GetComponent<DissolveShaderScript>().DissolveOff();
+    }
+    //Deactivates the object after this function is called by MaterialManager and set the material to standard Lit material again.
+    public void DeActivateObject()
+    {
+        GameObjectToShow[currentModelNumber].SetActive(false);
+        if (AssetList != null) AssetList.gameObject.SetActive(true);
+        if (ModelView != null) ModelView.gameObject.SetActive(false);
+        RenderSettings.skybox = ModelListSkybox;
     }
 }

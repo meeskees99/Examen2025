@@ -19,29 +19,22 @@ public class MaterialManager : MonoBehaviour
     [SerializeField] private Material[] assignedMaterials;
 
     //readyToDeactivate is used to detect wether or not object is ready to be deactivated.
-    [HideInInspector] public bool readyToDeactivate = false;
-    [HideInInspector] public bool readyToActivate = false;
     [SerializeField] private CanvasManager canvasManager;
+    [HideInInspector]public bool readyToDeactivate;
 
-    // Update is used for checking if the dissolveshader is done with dissolving by asking and then setting a boolean (readyToDeactivate) to say if it can be deactivated by another script called canvasManager.
-    void Update()
+    //Activates dissolve material function to be called by other scripts.
+    public void ActivateDissolveMaterial()
     {
-        if(canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().dissolveslider > 0.95f && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == true)
-        {
-            MaterialChange(1);
-            readyToActivate = true;
-        }
-        else if(readyToDeactivate == true && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == false)
-        {
+        MaterialChange(4);
+        readyToDeactivate = false;
+    }
 
-            readyToDeactivate = false;
-        }
-
-        if(canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().dissolveslider < -0.95f && canvasManager.GameObjectToShow[canvasManager.currentModelNumber].GetComponent<DissolveShaderScript>().done == true)
-        {
-            MaterialChange(1);
-            readyToDeactivate = true;
-        }
+    //Deactivates dissolve material function to be called by other scripts.
+    public void DeactivateDissolveMaterial()
+    {
+        MaterialChange(1);
+        readyToDeactivate = true;
+        canvasManager.DeActivateObject();
     }
 
     /*This function applies the materials assigned in inspector, this is done per UI button.

@@ -812,6 +812,11 @@ PrefabInstance:
       propertyPath: dissolveslider
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materialManager
+      value: 
+      objectReference: {fileID: 1581053277}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1112,6 +1117,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2120295519}
     m_Modifications:
+    - target: {fileID: 4336532607308800769, guid: 73f8f970662a03b4aaab51cbd19020f2,
+        type: 3}
+      propertyPath: materialManager
+      value: 
+      objectReference: {fileID: 1581053277}
     - target: {fileID: 7261355690846280924, guid: 73f8f970662a03b4aaab51cbd19020f2,
         type: 3}
       propertyPath: m_Name
@@ -2738,7 +2748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040535245, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.0557861, y: -0.000030517578}
+  m_AnchoredPosition: {x: 1.0557861, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &531947961
@@ -2924,6 +2934,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8293363808883132736, guid: cea812737f8a8194c9ad482f3efc8691,
+        type: 3}
+      propertyPath: materialManager
+      value: 
+      objectReference: {fileID: 1581053277}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4539,7 +4554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927682703
@@ -6869,6 +6884,7 @@ MonoBehaviour:
   ModelListSkybox: {fileID: 2100000, guid: 6529f1f61b925f149bd2d4c92ed323a1, type: 2}
   ModelViewSkybox: {fileID: 2100000, guid: d0f8f01f9d2221a41853c13f53bab5b8, type: 2}
   currentModelNumber: 0
+  materialManager: {fileID: 1581053277}
 --- !u!4 &1513815267
 Transform:
   m_ObjectHideFlags: 0
@@ -6954,6 +6970,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7816203374631461243, guid: 53e3ecc59c9b2ea4fb513426bc4ea9f4,
+        type: 3}
+      propertyPath: materialManager
+      value: 
+      objectReference: {fileID: 1581053277}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7347,9 +7368,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  readyToDeactivate: 0
-  readyToActivate: 0
   canvasManager: {fileID: 1513815266}
+  readyToDeactivate: 0
 --- !u!4 &1581053278
 Transform:
   m_ObjectHideFlags: 0
@@ -7936,7 +7956,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 482947939}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.7038524
+  m_Size: 0.7378314
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10119,6 +10139,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2120295519}
     m_Modifications:
+    - target: {fileID: 755102293678821144, guid: 3fde821acd96d7e41b71a13388a5e260,
+        type: 3}
+      propertyPath: materialManager
+      value: 
+      objectReference: {fileID: 1581053277}
     - target: {fileID: 7127656378291224101, guid: 3fde821acd96d7e41b71a13388a5e260,
         type: 3}
       propertyPath: m_Name
